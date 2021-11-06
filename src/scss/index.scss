@@ -1,0 +1,92 @@
+// @import '~bootstrap/scss/bootstrap';
+
+@import "./fonts";
+
+body {
+  margin: 0;
+  background-color: #000;
+}
+
+#clock {
+  color: #5a3585;
+  font-family: "Orbitron";
+  font-size: xx-large;
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px auto;
+  margin: 0 auto;
+  padding: 18px;
+  width: 300px;
+  border-radius: 25px;
+  background: linear-gradient(
+    45deg,
+    #f17c58,
+    #e94584,
+    #24aadb,
+    #27dbb1,
+    #ffdc18,
+    #ff3706
+  );
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+#floatingbar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #24aadb;
+  animation: seconds 10s linear infinite;
+  height: 45px;
+  width: 5px;
+  border-radius: 25px;
+}
+
+#nose {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 45px;
+  width: 45px;
+  background-color: #ccc8c8;
+  border-radius: 50%;
+  border: 1px solid #000;
+  animation: blink 3s 1s linear infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes seconds {
+  from {
+    transform: rotate(0deg) translate(200px) rotate(360deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(200px) rotate(360deg);
+  }
+}
